@@ -7,15 +7,12 @@ import { connect } from 'react-redux'
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
-  Image,
   List,
   Menu,
   Segment,
-  Visibility,
   Form,
 } from 'semantic-ui-react'
 
@@ -82,7 +79,7 @@ class HomepageLayout extends Component {
             <Header
               as='h1'
               content='Awesomeness Catalog'
-              style={{ fontSize: '3em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
+              style={{ fontSize: '3em', fontWeight: 'normal', marginBottom: 0, marginTop: '2em' }}
             />
             <Header
               as='h2'
@@ -91,25 +88,18 @@ class HomepageLayout extends Component {
             />
 
             <Form onSubmit={this.handleSubmit}>
-              <Grid>
-                <Grid.Column width={11}>
-                  <Form.Dropdown
-                    fluid multiple search selection options={tags}
-                    defaultValue={this.defaultSearchTags}
-                    onChange={this.onChangeDropdown}
-                    style={{fontSize: '14px'}}
-                    placeholder='Select tags describing your search'
-                  />
-                </Grid.Column>
-                <Grid.Column width={5}>
-                  <Form.Button primary disabled={disabledSearchBtn} >
-                    Find resourses
-                    <Icon name='right arrow' />
-                  </Form.Button>
-                </Grid.Column>
-              </Grid>
+              <Form.Dropdown
+                fluid multiple search selection options={tags}
+                defaultValue={this.defaultSearchTags}
+                onChange={this.onChangeDropdown}
+                style={{fontSize: '14px'}}
+                placeholder='Select tags describing your search'
+              />
+              <Form.Button primary disabled={disabledSearchBtn} >
+                Find resourses
+                <Icon name='right arrow' />
+              </Form.Button>
             </Form>
-
           </Container>
         </Segment>
 
