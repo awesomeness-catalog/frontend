@@ -1,12 +1,15 @@
 {
   "name": "create-react-app-redux",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://awesomeness-catalog.github.io/frontend",
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "react-scripts": "^1.0.17"
   },
   "dependencies": {
     "gulp-clone": "1.0.0",
+    "history": "^4.7.2",
     "lodash": "^4.17.4",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
@@ -29,7 +32,8 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "homepage": "https://cra-redux-router-thunk.herokuapp.com"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
 }

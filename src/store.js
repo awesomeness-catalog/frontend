@@ -4,7 +4,12 @@ import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './modules'
 
-export const history = createHistory()
+const basename =
+  window.location.host === 'awesomeness-catalog.github.io'
+    ? 'frontend'
+    : ''
+
+export const history = createHistory({ basename })
 
 const initialState = {}
 const enhancers = []
